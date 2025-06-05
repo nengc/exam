@@ -28,7 +28,7 @@ jobs:
     - name: Install Yarn dependencies
       run: |
         cd frontend
-        yarn install --frozen-lockfile
+        yarn install
         cd ..
 
     - name: Build frontend
