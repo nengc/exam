@@ -23,6 +23,11 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 18
+        cache: 'yarn'
+        cache-dependency-path: |
+          frontend/sg-exam-web/yarn.lock
+          frontend/sg-exam-mobile/yarn.lock
+          frontend/sg-exam-admin/yarn.lock
 
     - name: Build frontend
       run: |
