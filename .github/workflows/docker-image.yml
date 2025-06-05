@@ -23,11 +23,25 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 18
-        cache: 'yarn'
-        cache-dependency-path: |
-          frontend/sg-exam-web/yarn.lock
-          frontend/sg-exam-mobile/yarn.lock
-          frontend/sg-exam-admin/yarn.lock
+
+    - name: Install dependencies for web
+      run: |
+        cd frontend/sg-exam-web
+        yarn install --frozen-lockfile
+        cd ../..
+        
+    - name: Install dependencies for admin
+      run: |
+        cd frontend/sg-exam-admin
+        yarn install --frozen-lockfile
+        cd ../..
+
+    - name: Install dependencies for mobile
+      run: |
+        cd frontend/sg-exam-mobile
+        yarn install --frozen-lockfile
+        cd ../..
+    
 
     - name: Build frontend
       run: |
