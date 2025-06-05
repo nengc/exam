@@ -25,12 +25,6 @@ jobs:
         node-version: 16
         cache: 'yarn'
 
-    - name: Install Yarn dependencies
-      run: |
-        cd frontend
-        yarn install
-        cd ..
-
     - name: Build frontend
       run: |
         chmod +x build.sh
