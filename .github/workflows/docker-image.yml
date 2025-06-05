@@ -27,13 +27,13 @@ jobs:
     - name: Build frontend
       run: |
         chmod +x build.sh
-        ./build.sh -build_f
+        ./setup.sh -build_f
 
     - name: Build backend and Docker image
       run: |
         # 生成版本号（使用时间戳 + Git 短 SHA）
         VERSION=$(date +%Y%m%d%H%M%S)-$(git rev-parse --short HEAD)
-        ./build.sh -build $VERSION
+        ./setup.sh -build $VERSION
         
         # 保存镜像信息供后续步骤使用
         echo "IMAGE_NAME=sg-exam" >> $GITHUB_ENV
