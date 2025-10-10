@@ -136,7 +136,7 @@ public class SubjectImportExportService {
 		}
 	}
 
-	public List<SubjectDto> export(Long[] ids, Long examinationId, Long categoryId) {
+	/*public List<SubjectDto> export(Long[] ids, Long examinationId, Long categoryId) {
 		List<SubjectDto> subjects = new ArrayList<>();
 		ExaminationSubject es = new ExaminationSubject();
 		List<ExaminationSubject> examinationSubjects = Lists.newArrayList();
@@ -161,6 +161,35 @@ public class SubjectImportExportService {
 			}
 		}
 		return subjects;
+	}*/
+
+	public List<SubjectDto> export(Long[] ids, Long examinationId, Long categoryId) {
+	    List<SubjectDto> subjects = new ArrayList<>();
+	    List<ExaminationSubject> examinationSubjects = Lists.newArrayList();
+	    
+	    // 根据题目 ID 导出
+	    if (ArrayUtils.isNotEmpty(ids)) {
+	        for (Long id : ids) {
+	            ExaminationSubject es = new ExaminationSubject(); // 在循环内部创建新对象
+	            es.setSubjectId(id);
+	            examinationSubjects.add(es);
+	        }
+	    } else if (examinationId != null) {
+	        // 根据考试 ID
+	        examinationSubjects = examinationSubjectService.findListByExaminationId(examinationId);
+	    } else if (categoryId != null) {
+	        // 根据分类 ID、类型导出
+	        examinationSubjects = examinationSubjectService.findListByCategoryId(categoryId);
+	    }
+	    
+	    if (CollectionUtils.isNotEmpty(examinationSubjects)) {
+	        for (ExaminationSubject temp : examinationSubjects) {
+	            SubjectDto dto = subjectsService.getSubject(temp.getSubjectId());
+	            dto.setExaminationId(temp.getExaminationId());
+	            subjects.add(dto);
+	        }
+	    }
+	    return subjects;
 	}
 
 	public Boolean importJSONSubject(Long categoryId, MultipartFile file) throws IOException {
