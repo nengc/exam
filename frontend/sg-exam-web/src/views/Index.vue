@@ -117,7 +117,8 @@ export default {
       this.language = lang
     },
     openAdmin() {
-      window.open(window.location.origin + '/admin')
+      // window.open(window.location.origin + '/admin')
+      window.open(window.location.origin + "/admin/#")
     },
     handleSubmitExam() {
       this.$refs.mainRef.handleSubmitExam()
