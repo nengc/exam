@@ -50,7 +50,7 @@
       </Button>
     </FormItem>
     <ARow class="enter-x">
-      <ACol :md="8" :xs="24">
+      <!-- <ACol :md="8" :xs="24">
         <Button block @click="setLoginState(LoginStateEnum.MOBILE)">
           {{ t('sys.login.mobileSignInFormTitle') }}
         </Button>
@@ -59,7 +59,7 @@
         <Button block @click="handleQrCodeLogin">
           {{ t('sys.login.qrSignInFormTitle') }}
         </Button>
-      </ACol>
+      </ACol> -->
       <ACol :md="7" :xs="24">
         <Button block @click="setLoginState(LoginStateEnum.REGISTER)">
           {{ t('sys.login.registerButton') }}
