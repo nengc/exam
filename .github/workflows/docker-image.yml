@@ -36,6 +36,11 @@ jobs:
         yarn install --frozen-lockfile
         cd ../..
 
+    - name: Generate icons
+      run:  |
+        cd frontend/sg-exam-admin
+        npm run gen:icon
+
     - name: Install dependencies for mobile
       run: |
         cd frontend/sg-exam-mobile
