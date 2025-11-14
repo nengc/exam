@@ -87,7 +87,7 @@ async function generateIcon() {
   }));
 
   // 固定配置 - 在 GitHub Actions 中自动运行
-  const iconSets = ['ant-design']; // 只需要 ant-design
+  const iconSets = ['ant-design', 'clarity', 'ion', 'codicon', 'eva', 'whh']; // 只需要 ant-design
   const output = 'src/components/Icon/data';
 
   console.log(`🎯 Generating icons for: ${iconSets.join(', ')}`);
