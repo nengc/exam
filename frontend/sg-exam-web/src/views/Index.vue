@@ -20,7 +20,7 @@
                   <el-menu-item index="/exams" @click="open('/exams')">{{ $t('examination') }}</el-menu-item>
                   <el-menu-item index="/courses" @click="open('/courses')">{{ $t('course') }}</el-menu-item>
                   <el-menu-item index="/exam-record" @click="open('/exam-record')">{{$t('exam.records.records')}}</el-menu-item>
-                  <el-menu-item index="u-admin" @click="openAdmin()">{{$t('header.admin')}}</el-menu-item>
+                  <!--<el-menu-item index="u-admin" @click="openAdmin()">{{$t('header.admin')}}</el-menu-item>-->
                   <el-submenu v-if="login" index="/user-info">
                     <template slot="title">
                       <img v-if="userInfo.avatar && userInfo.avatar !== ''" :src="userInfo.avatar"
