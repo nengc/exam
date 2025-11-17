@@ -3,7 +3,7 @@
     <div class="container">
       <el-row :gutter="20">
         <div class="copyright">
-          <h4 class="content-c2" style="text-align: center;">Copyright © 2019-2024 {{ sysConfig.sys_web_name }}</h4>
+          <h4 class="content-c2" style="text-align: center;">Copyright ©  {{new Date().getFullYear()}} {{ sysConfig.sys_web_name }}</h4>
           <ul class="privacy">
             <li class="content-c1"><a class="content-c0"
                                       @click="openContactUs">{{ $t('common.contactUs') }}</a></li>
