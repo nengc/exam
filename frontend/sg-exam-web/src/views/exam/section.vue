@@ -15,7 +15,7 @@
                     <div class="section-container-item"
                        v-for="section in chapter.sections" :key="section.section.id">
                       <p 
-                        :title={{ section.section.title }}
+                        :title="section.section.title"
                         :class="((pointId === undefined || pointId === -1) && section.section.id === sectionId) ? 'section-title-selected section-title' : 'section-title'"
                         @click.stop="handleClickSection(section)">
                         {{ section.section.title }}</p>
