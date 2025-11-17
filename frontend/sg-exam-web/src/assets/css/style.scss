@@ -1630,3 +1630,9 @@ img {
 .t-card-text {
   overflow: auto;
 }
+
+.section-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
