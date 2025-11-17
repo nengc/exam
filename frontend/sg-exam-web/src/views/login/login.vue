@@ -90,9 +90,9 @@
                 <el-button :loading="login.loading" type="primary"
                            @click.native.prevent="handleLogin">{{$t('login')}}</el-button>
               </el-form-item>
-              <div class="sms-login">
+              <!--<div class="sms-login">
                 <span @click="smsLogin">{{$t('smsCodeLogin')}}</span>
-              </div>
+              </div>-->
             </el-form>
           </div>
           <div v-else>
